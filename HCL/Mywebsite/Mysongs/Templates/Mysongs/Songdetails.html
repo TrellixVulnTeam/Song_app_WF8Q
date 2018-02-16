@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <title>SongDetailedview</title>
+</head>
+<body>
+        {% for songs in song_info %}
+        <ul>
+            <li>
+               <h2>{{ songs.song_id}} - {{ songs.song_name}} - {{ songs.artist_name }} - </h2>
+
+{% if rating %}
+    <form method="POST">
+        {% csrf_token %}
+        {% for i in values %}
+                {% if i == rating %}
+                    <input type="radio" name="userrating" value="{{ i }}" Checked>
+                {% else %}
+                    <input type="radio" name="userrating" value="{{ i }}">
+                {% endif %}
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+
+{% else %}
+    <form method="POST">
+            {% csrf_token %}
+                    <input type="radio" name="userrating" value="1" >
+                    <input type="radio" name="userrating" value="2" >
+                    <input type="radio" name="userrating" value="3" >
+                    <input type="radio" name="userrating" value="4" >
+                    <input type="radio" name="userrating" value="5" >
+                    <input type="submit" value="Submit">
+                </form>
+            </li>
+        </ul>
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% endfor %}
+
+
+
+</body>
+</html>

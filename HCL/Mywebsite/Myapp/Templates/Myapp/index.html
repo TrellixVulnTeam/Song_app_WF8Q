@@ -1,0 +1,21 @@
+{% if odc1_list %}
+
+    {% for Odc1 in odc1_list %}
+    <ul>
+    <li>
+        <h2>person_id:{{ Odc1.person_id }}</h2>
+        <h2>person_name:{{ Odc1.person_name }}</h2>
+        <h2>person_age:{{ Odc1.person_age }}</h2>
+    </li>
+    </ul>
+{% endfor %}
+    {% else %}
+    <h1>No Odc1 entries found on the database.</h1>
+{% endif %}
+<a href="/Myapp/logout">Logout</a>
+
+
+
+
+
+

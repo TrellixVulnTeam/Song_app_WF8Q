@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="text-align:center">
+
+    <form method="POST">
+            {% csrf_token %}
+        <div class="container">
+            <div class="form-group">
+                <br>
+
+
+                </br>
+                <h1>Creating Album</h1>
+                <br> </br>
+                <label for="albumname<"><b>AlbumName</b></label>
+                <input type="text" placeholder="Enter AlbumName" name="albumname" required>
+                <br> </br>
+            </div>
+            <div class="form-group">
+                <label for="albumyear"><b>AlbumYear</b></label>
+                <input type="text" placeholder="Enter AlbumYear" name="albumyear" required>
+                <br> </br>
+            </div>
+            <div class="form-group">
+                <label for="songname"><b>SongName</b></label>
+                <input type="text" placeholder="Enter SongName" name="songname" required>
+                <br> </br>
+            </div>
+            <div class="form-group">
+                <label for="artistname"><b>ArtistName</b></label>
+                <input type="text" placeholder="Enter ArtistName" name="artistname" required>
+                <br> </br>
+            </div>
+                <button type="submit">submit</button>
+                <button type="submit">View Album</button>
+               <!-- <button href="/Myapp/logout">Logout</button> -->
+
+        </div>
+
+    </form>
+</body>
+</html>
+
+
+
+
+
