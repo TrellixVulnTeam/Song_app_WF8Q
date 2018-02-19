@@ -3,16 +3,36 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Albums</title>
+    <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
 </head>
 <body>
+<table style="width:100%">
+    <h2><caption>Album List</caption></h2>
+    <tr>
+               <th><h2>Album Name</h2></th>
+                <th><h2>Released Year</h2></th>
+</tr>
+    <tr>
 
        {% for album in album_list %}
         <ul>
 
-            <li>
-                <h2><a href="songsview/{{ album.album_id }}">{{ album.album_name}} </a> - {{ album.album_year}}  </h2>
-            </li>
+
+                <th><h2><a href="songsview/{{ album.album_id }}">{{ album.album_name}} </a></h2></th>
+            <th><h2>{{ album.album_year}}</h2></th>
+
         </ul>
+        </tr>
 {% endfor %}
+    </table>
 </body>
 </html>

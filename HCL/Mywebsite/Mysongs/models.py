@@ -16,6 +16,7 @@ class Songstable(models.Model):
     album_id = models.ForeignKey(Albumtable, on_delete=models.CASCADE)
     song_name = models.CharField(max_length=60)
     artist_name = models.CharField(max_length=60)
+    view_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.song_name

@@ -4,13 +4,38 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <title>SongDetailedview</title>
+    <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
 </head>
 <body>
-        {% for songs in song_info %}
+<table style="width:100%">
+    <caption>Song Detailed view</caption>
+    <tr>
         <ul>
-            <li>
-               <h2>{{ songs.song_id}} - {{ songs.song_name}} - {{ songs.artist_name }} - </h2>
+                    <th>Song ID</th>
+                        <th>Song Name</th>
+                        <!--<th>Album Name</th>-->
+                        <th>Artist Name</th>
+                        <th>User Rating</th>
+                        <th>Views</th>
+            </ul>
+    </tr>
 
+    <tr>
+
+                    <th>{{ song_info.song_id}}</th>
+                        <th>{{ song_info.song_name}}</th>
+                        <th>{{ song_info.artist_name }}</th>
+
+<th>
 {% if rating %}
     <form method="POST">
         {% csrf_token %}
@@ -23,10 +48,12 @@
         {% endfor %}
         <input type="submit" value="Submit">
     </form>
+</th>
 
 {% else %}
     <form method="POST">
             {% csrf_token %}
+
                     <input type="radio" name="userrating" value="1" >
                     <input type="radio" name="userrating" value="2" >
                     <input type="radio" name="userrating" value="3" >
@@ -34,9 +61,12 @@
                     <input type="radio" name="userrating" value="5" >
                     <input type="submit" value="Submit">
                 </form>
-            </li>
+
         </ul>
 {% endif %}
+                    <th>{{ song_info.view_count }}</th>
+
+                    </tr>
 
 
 
@@ -46,9 +76,9 @@
 
 
 
-{% endfor %}
 
 
 
+</table>
 </body>
 </html>
